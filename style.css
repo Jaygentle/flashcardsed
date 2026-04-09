@@ -1,83 +1,69 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
+    margin: 0;
     font-family: Arial, sans-serif;
-    background: #1e1b18; /* dark */
-    color: #f5f5dc; /* beige */
+    background: #1e293b;
+    color: #f5f5dc;
     text-align: center;
 }
 
-/* MENU */
-.menu {
-    padding: 40px 20px;
+/* Title */
+h1 {
+    margin-top: 20px;
+    font-size: 40px;
 }
 
-.buttons a {
-    display: inline-block;
-    margin: 10px;
-    padding: 12px 20px;
+.subtitle {
+    opacity: 0.8;
+}
+
+/* Categories */
+.categories {
+    margin: 20px;
+}
+
+.categories button {
     background: #f5f5dc;
-    color: #1e1b18;
-    text-decoration: none;
+    color: #1e293b;
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
     border-radius: 8px;
+    cursor: pointer;
     font-weight: bold;
-    transition: 0.3s;
 }
 
-.buttons a:hover {
-    background: #d6cfc2;
+.categories button:hover {
+    background: #e0d8b0;
 }
 
-/* SECTIONS */
-.section {
+/* Sections */
+.category {
     display: none;
-    padding: 30px 20px;
+    margin-top: 30px;
 }
 
-/* SHOW ONLY WHEN SELECTED */
-.section:target {
-    display: block;
-}
-
-/* BACK BUTTON */
-.back {
-    display: inline-block;
-    margin: 15px;
-    color: #f5f5dc;
-    text-decoration: underline;
-}
-
-/* CONTAINER */
-.container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 20px;
-}
-
-/* CARD */
+/* Cards layout */
 .card {
-    width: 180px;
-    height: 120px;
+    width: 220px;
+    height: 140px;
+    margin: 15px auto;
+    perspective: 1000px;
 }
 
+/* Hide checkbox */
 .card input {
     display: none;
 }
 
-.flip {
+/* Label acts as click area */
+.card label {
     display: block;
     width: 100%;
     height: 100%;
     cursor: pointer;
-    perspective: 1000px;
 }
 
-/* INNER */
+/* Inner flip */
 .inner {
     width: 100%;
     height: 100%;
@@ -86,32 +72,31 @@ body {
     transform-style: preserve-3d;
 }
 
-/* FLIP */
-.card input:checked + .flip .inner {
+/* Flip when checked */
+.card input:checked + label .inner {
     transform: rotateY(180deg);
 }
 
-/* FRONT & BACK */
+/* Front & Back */
 .front, .back {
     position: absolute;
     width: 100%;
     height: 100%;
-    border-radius: 10px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 10px;
+    font-size: 18px;
     backface-visibility: hidden;
 }
 
-/* COLORS */
+/* Front style */
 .front {
-    background: #2c2622;
-    color: #f5f5dc;
+    background: linear-gradient(135deg, #3b82f6, #60a5fa);
 }
 
+/* Back style */
 .back {
-    background: #f5f5dc;
-    color: #1e1b18;
+    background: linear-gradient(135deg, #eab308, #facc15);
     transform: rotateY(180deg);
 }
