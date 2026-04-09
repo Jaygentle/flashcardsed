@@ -7,23 +7,41 @@
 </head>
 <body>
 
-<h1>📚 Flashcards</h1>
-<p class="subtitle">Choose a category to start</p>
+<!-- NAVBAR -->
+<nav class="navbar">
+    <h2>📚 Flashcards</h2>
+    <ul>
+        <li onclick="showCategory('math')">Math</li>
+        <li onclick="showCategory('science')">Science</li>
+        <li onclick="showCategory('general')">General</li>
+    </ul>
+</nav>
 
-<!-- Categories -->
+<!-- HEADER -->
+<h1>Flashcards</h1>
+<p>Choose a category to start</p>
+
+<!-- SCORE DISPLAY -->
+<div class="score">
+    Math Score: <span id="mathScore">0</span> |
+    Science Score: <span id="scienceScore">0</span> |
+    General Score: <span id="generalScore">0</span>
+</div>
+
+<!-- CATEGORY BUTTONS -->
 <div class="categories">
     <button onclick="showCategory('math')">📐 Math</button>
     <button onclick="showCategory('science')">🔬 Science</button>
     <button onclick="showCategory('general')">🌍 General</button>
 </div>
 
-<!-- Math Section -->
+<!-- MATH -->
 <div id="math" class="category">
     <h2>Math</h2>
 
     <div class="card">
         <input type="checkbox" id="m1">
-        <label for="m1">
+        <label for="m1" onclick="addScore('math')">
             <div class="inner">
                 <div class="front">5 + 3?</div>
                 <div class="back">8</div>
@@ -33,99 +51,80 @@
 
     <div class="card">
         <input type="checkbox" id="m2">
-        <label for="m2">
+        <label for="m2" onclick="addScore('math')">
             <div class="inner">
                 <div class="front">10 × 2?</div>
                 <div class="back">20</div>
             </div>
         </label>
     </div>
-
-    <div class="card">
-        <input type="checkbox" id="m3">
-        <label for="m3">
-            <div class="inner">
-                <div class="front">12 ÷ 4?</div>
-                <div class="back">3</div>
-            </div>
-        </label>
-    </div>
 </div>
 
-<!-- Science Section -->
+<!-- SCIENCE -->
 <div id="science" class="category">
     <h2>Science</h2>
 
     <div class="card">
         <input type="checkbox" id="s1">
-        <label for="s1">
-            <div class="inner">
-                <div class="front">What gas do we breathe?</div>
-                <div class="back">Oxygen</div>
-            </div>
-        </label>
-    </div>
-
-    <div class="card">
-        <input type="checkbox" id="s2">
-        <label for="s2">
+        <label for="s1" onclick="addScore('science')">
             <div class="inner">
                 <div class="front">H₂O is?</div>
                 <div class="back">Water</div>
             </div>
         </label>
     </div>
-
-    <div class="card">
-        <input type="checkbox" id="s3">
-        <label for="s3">
-            <div class="inner">
-                <div class="front">Planet closest to Sun?</div>
-                <div class="back">Mercury</div>
-            </div>
-        </label>
-    </div>
 </div>
 
-<!-- General Section -->
+<!-- GENERAL -->
 <div id="general" class="category">
     <h2>General</h2>
 
     <div class="card">
         <input type="checkbox" id="g1">
-        <label for="g1">
+        <label for="g1" onclick="addScore('general')">
             <div class="inner">
                 <div class="front">Capital of Rwanda?</div>
                 <div class="back">Kigali</div>
             </div>
         </label>
     </div>
-
-    <div class="card">
-        <input type="checkbox" id="g2">
-        <label for="g2">
-            <div class="inner">
-                <div class="front">Largest ocean?</div>
-                <div class="back">Pacific Ocean</div>
-            </div>
-        </label>
-    </div>
-
-    <div class="card">
-        <input type="checkbox" id="g3">
-        <label for="g3">
-            <div class="inner">
-                <div class="front">Language of France?</div>
-                <div class="back">French</div>
-            </div>
-        </label>
-    </div>
 </div>
+
+<!-- BACK TO TOP -->
+<button id="topBtn" onclick="topFunction()">⬆ Top</button>
+
+<!-- FOOTER -->
+<footer>
+    <p>© 2026 Flashcards App | Made by You 💻🔥</p>
+</footer>
 
 <script>
 function showCategory(id) {
     document.querySelectorAll('.category').forEach(c => c.style.display = 'none');
     document.getElementById(id).style.display = 'block';
+}
+
+// SCORES
+let scores = { math: 0, science: 0, general: 0 };
+
+function addScore(cat) {
+    scores[cat]++;
+    document.getElementById(cat + "Score").innerText = scores[cat];
+}
+
+// BACK TO TOP
+let btn = document.getElementById("topBtn");
+
+window.onscroll = function () {
+    if (document.documentElement.scrollTop > 100) {
+        btn.style.display = "block";
+    } else {
+        btn.style.display = "none";
+    }
+};
+
+function topFunction() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
 }
 </script>
 
