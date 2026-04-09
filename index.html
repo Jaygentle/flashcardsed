@@ -7,167 +7,127 @@
 </head>
 <body>
 
-<!-- MENU -->
-<section class="menu">
-    <h1>📚 Flashcards</h1>
-    <p>Choose a category to start</p>
+<h1>📚 Flashcards</h1>
+<p class="subtitle">Choose a category to start</p>
 
-    <div class="buttons">
-        <a href="#math">📐 Math</a>
-        <a href="#science">🔬 Science</a>
-        <a href="#general">🌍 General</a>
+<!-- Categories -->
+<div class="categories">
+    <button onclick="showCategory('math')">📐 Math</button>
+    <button onclick="showCategory('science')">🔬 Science</button>
+    <button onclick="showCategory('general')">🌍 General</button>
+</div>
+
+<!-- Math Section -->
+<div id="math" class="category">
+    <h2>Math</h2>
+
+    <div class="card">
+        <input type="checkbox" id="m1">
+        <label for="m1">
+            <div class="inner">
+                <div class="front">5 + 3?</div>
+                <div class="back">8</div>
+            </div>
+        </label>
     </div>
-</section>
 
-<!-- MATH -->
-<section id="math" class="section">
-    <h2>📐 Math</h2>
-    <a class="back" href="#">⬅ Back</a>
-
-    <div class="container">
-
-        <div class="card">
-            <input type="checkbox" id="m1">
-            <label for="m1" class="flip">
-                <div class="inner">
-                    <div class="front">5 + 3?</div>
-                    <div class="back">8</div>
-                </div>
-            </label>
-        </div>
-
-        <div class="card">
-            <input type="checkbox" id="m2">
-            <label for="m2" class="flip">
-                <div class="inner">
-                    <div class="front">10 × 2?</div>
-                    <div class="back">20</div>
-                </div>
-            </label>
-        </div>
-
-        <div class="card">
-            <input type="checkbox" id="m3">
-            <label for="m3" class="flip">
-                <div class="inner">
-                    <div class="front">12 ÷ 4?</div>
-                    <div class="back">3</div>
-                </div>
-            </label>
-        </div>
-
-        <div class="card">
-            <input type="checkbox" id="m4">
-            <label for="m4" class="flip">
-                <div class="inner">
-                    <div class="front">Square root of 9?</div>
-                    <div class="back">3</div>
-                </div>
-            </label>
-        </div>
-
+    <div class="card">
+        <input type="checkbox" id="m2">
+        <label for="m2">
+            <div class="inner">
+                <div class="front">10 × 2?</div>
+                <div class="back">20</div>
+            </div>
+        </label>
     </div>
-</section>
 
-<!-- SCIENCE -->
-<section id="science" class="section">
-    <h2>🔬 Science</h2>
-    <a class="back" href="#">⬅ Back</a>
-
-    <div class="container">
-
-        <div class="card">
-            <input type="checkbox" id="s1">
-            <label for="s1" class="flip">
-                <div class="inner">
-                    <div class="front">Water formula?</div>
-                    <div class="back">H₂O</div>
-                </div>
-            </label>
-        </div>
-
-        <div class="card">
-            <input type="checkbox" id="s2">
-            <label for="s2" class="flip">
-                <div class="inner">
-                    <div class="front">Planet we live on?</div>
-                    <div class="back">Earth</div>
-                </div>
-            </label>
-        </div>
-
-        <div class="card">
-            <input type="checkbox" id="s3">
-            <label for="s3" class="flip">
-                <div class="inner">
-                    <div class="front">Sun is a?</div>
-                    <div class="back">Star</div>
-                </div>
-            </label>
-        </div>
-
-        <div class="card">
-            <input type="checkbox" id="s4">
-            <label for="s4" class="flip">
-                <div class="inner">
-                    <div class="front">Human breathing organ?</div>
-                    <div class="back">Lungs</div>
-                </div>
-            </label>
-        </div>
-
+    <div class="card">
+        <input type="checkbox" id="m3">
+        <label for="m3">
+            <div class="inner">
+                <div class="front">12 ÷ 4?</div>
+                <div class="back">3</div>
+            </div>
+        </label>
     </div>
-</section>
+</div>
 
-<!-- GENERAL -->
-<section id="general" class="section">
-    <h2>🌍 General Knowledge</h2>
-    <a class="back" href="#">⬅ Back</a>
+<!-- Science Section -->
+<div id="science" class="category">
+    <h2>Science</h2>
 
-    <div class="container">
-
-        <div class="card">
-            <input type="checkbox" id="g1">
-            <label for="g1" class="flip">
-                <div class="inner">
-                    <div class="front">Capital of Rwanda?</div>
-                    <div class="back">Kigali</div>
-                </div>
-            </label>
-        </div>
-
-        <div class="card">
-            <input type="checkbox" id="g2">
-            <label for="g2" class="flip">
-                <div class="inner">
-                    <div class="front">Largest ocean?</div>
-                    <div class="back">Pacific Ocean</div>
-                </div>
-            </label>
-        </div>
-
-        <div class="card">
-            <input type="checkbox" id="g3">
-            <label for="g3" class="flip">
-                <div class="inner">
-                    <div class="front">Number of continents?</div>
-                    <div class="back">7</div>
-                </div>
-            </label>
-        </div>
-
-        <div class="card">
-            <input type="checkbox" id="g4">
-            <label for="g4" class="flip">
-                <div class="inner">
-                    <div class="front">Largest country?</div>
-                    <div class="back">Russia</div>
-                </div>
-            </label>
-        </div>
-
+    <div class="card">
+        <input type="checkbox" id="s1">
+        <label for="s1">
+            <div class="inner">
+                <div class="front">What gas do we breathe?</div>
+                <div class="back">Oxygen</div>
+            </div>
+        </label>
     </div>
-</section>
+
+    <div class="card">
+        <input type="checkbox" id="s2">
+        <label for="s2">
+            <div class="inner">
+                <div class="front">H₂O is?</div>
+                <div class="back">Water</div>
+            </div>
+        </label>
+    </div>
+
+    <div class="card">
+        <input type="checkbox" id="s3">
+        <label for="s3">
+            <div class="inner">
+                <div class="front">Planet closest to Sun?</div>
+                <div class="back">Mercury</div>
+            </div>
+        </label>
+    </div>
+</div>
+
+<!-- General Section -->
+<div id="general" class="category">
+    <h2>General</h2>
+
+    <div class="card">
+        <input type="checkbox" id="g1">
+        <label for="g1">
+            <div class="inner">
+                <div class="front">Capital of Rwanda?</div>
+                <div class="back">Kigali</div>
+            </div>
+        </label>
+    </div>
+
+    <div class="card">
+        <input type="checkbox" id="g2">
+        <label for="g2">
+            <div class="inner">
+                <div class="front">Largest ocean?</div>
+                <div class="back">Pacific Ocean</div>
+            </div>
+        </label>
+    </div>
+
+    <div class="card">
+        <input type="checkbox" id="g3">
+        <label for="g3">
+            <div class="inner">
+                <div class="front">Language of France?</div>
+                <div class="back">French</div>
+            </div>
+        </label>
+    </div>
+</div>
+
+<script>
+function showCategory(id) {
+    document.querySelectorAll('.category').forEach(c => c.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+}
+</script>
 
 </body>
 </html>
